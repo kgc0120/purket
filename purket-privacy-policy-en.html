@@ -9,7 +9,7 @@
 <h2>1. Summary</h2>
 <ul>
     <li>The App is <strong>local-first</strong>. If you use the App without signing in, all budgeting data stays on your device and is not sent anywhere.</li>
-    <li>When you sign in with an account, some data is stored in the cloud (Supabase) to enable <strong>backup, multi-device sync, and pocket sharing</strong>.</li>
+    <li>When you sign in with an account, some data is stored on a cloud server to enable <strong>backup, multi-device sync, and pocket sharing</strong>.</li>
     <li>The App does not use advertising identifiers (IDFA) and does not track users across apps or websites.</li>
 </ul>
 
@@ -25,13 +25,13 @@
 <ul>
     <li><strong>Account information</strong>
         <ul>
-            <li>Email address, password (stored as a one-way hash), user unique identifier (UUID)</li>
+            <li>Email address, password (stored as a one-way hash), user unique identifier</li>
             <li>Nickname (optional, shown to members of a shared pocket)</li>
             <li>Authentication metadata such as account creation and last sign-in timestamps</li>
         </ul>
     </li>
     <li><strong>Budget-related data</strong>: income/expense records (amount, memo, date, type, category, wallet, pocket), user-defined categories, wallets and pockets, recurring rules and their last-generated dates.</li>
-    <li><strong>When you use sharing</strong>: shared pocket key, owner and participant UUIDs, permission (read/write), share invitation link tokens and expiration timestamps.</li>
+    <li><strong>When you use sharing</strong>: information about the shared pocket, owner and participant identifiers, permission (read/write), share invitation link details and expiration timestamps.</li>
 </ul>
 
 <h2>3. Purpose of Processing</h2>
@@ -45,12 +45,12 @@
 <h2>4. Sub-processors (Third Parties)</h2>
 <p>The App relies on the following service for authentication and cloud storage:</p>
 <ul>
-    <li><strong>Supabase</strong> (Supabase Inc., USA) — Authentication (Supabase Auth) and database (PostgreSQL) hosting. The account, budget, and sharing data described above are stored here. Access is restricted by Row Level Security (RLS) policies so that only the owner and users the owner has explicitly shared with can access the data.</li>
+    <li><strong>Supabase</strong> — Account authentication and cloud database hosting. The account, budget, and sharing data described above are stored here. Access is restricted so that only you and users you have explicitly shared with can access the data.</li>
 </ul>
 <p>We do not sell your personal data or share it with any third party other than the sub-processor above.</p>
 
-<h2>5. International Data Transfer</h2>
-<p>Because we use Supabase, the data described above may be stored and processed on servers in a region operated by Supabase outside your country. Signing up for and using the account features constitutes your consent to such international transfer.</p>
+<h2>5. Data Storage Location</h2>
+<p>Account and budget-related data are stored and processed on servers in the <strong>Seoul, Republic of Korea region</strong>.</p>
 
 <h2>6. Optional Permissions & On-Device Processing</h2>
 <ul>
@@ -63,7 +63,7 @@
 <h2>7. Data Retention & Deletion</h2>
 <ul>
     <li>Locally stored data is removed when you uninstall the App.</li>
-    <li>When you delete your account, the account and all budget/sharing data associated with it are removed from Supabase (via cascading deletes).</li>
+    <li>When you delete your account, the account and all budget/sharing data associated with it are removed from the server.</li>
     <li>Depending on your OS/iCloud backup settings, app data may be backed up by Apple; the developer cannot access your backups.</li>
 </ul>
 
@@ -75,9 +75,9 @@
 
 <h2>10. Security</h2>
 <ul>
-    <li>All communication with Supabase is encrypted using HTTPS (TLS).</li>
-    <li>Server-side access is restricted by Supabase Auth session tokens and Row Level Security policies.</li>
-    <li>Passwords are stored as one-way hashes by Supabase Auth; the developer cannot see the plaintext.</li>
+    <li>All communication with the server is encrypted using HTTPS (TLS).</li>
+    <li>Data on the server is protected by per-user access policies so that only you and users you have shared with can access it.</li>
+    <li>Passwords are stored as one-way hashes; the developer cannot see the plaintext.</li>
 </ul>
 
 <h2>11. Contact</h2>
