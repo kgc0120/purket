@@ -1,30 +1,89 @@
-<!doctype html><html lang="ko"><head>
+<!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Privacy Policy</title>
 <style>body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6;padding:24px;max-width:900px;margin:auto}h1,h2{margin-top:1.6em}code,pre{background:#f6f8fa;padding:.2em .4em;border-radius:6px}.muted{color:#666;font-size:14px}</style>
 </head><body>
-<h1>Purket Privacy Policy</h1><p class="muted">Effective date: 2025-08-31</p>
-<p>This policy explains how the Purket app (“the App”) handles personal data.</p>
-<h2>1. Data We Collect</h2>
-<p><strong>By default, your budgeting data is stored only on your device</strong> and is not transmitted to the developer or any third party. In this case, the App Store “App Privacy” section may show <em>Data Not Collected</em>.</p>
-<ul><li>Budget data (pockets, categories, wallets, amounts, notes, etc.): stored on device</li><li>Accounts/Sign-in: not used</li><li>Advertising/Tracking: not used</li></ul>
-<h2>2. Optional Permissions & On‑Device Processing</h2>
+<h1>Purket Privacy Policy</h1><p class="muted">Effective date: 2026-07-27</p>
+<p>This policy explains what personal data the Purket app (“the App”) collects, how it is used, where it is stored, and with whom it is shared.</p>
+
+<h2>1. Summary</h2>
+<ul>
+    <li>The App is <strong>local-first</strong>. If you use the App without signing in, all budgeting data stays on your device and is not sent anywhere.</li>
+    <li>When you sign in with an account, some data is stored in the cloud (Supabase) to enable <strong>backup, multi-device sync, and pocket sharing</strong>.</li>
+    <li>The App does not use advertising identifiers (IDFA) and does not track users across apps or websites.</li>
+</ul>
+
+<h2>2. Data We Process</h2>
+<h3>2-1. When you are not signed in</h3>
+<ul>
+    <li>Budget data (pockets, categories, wallets, amounts, memos, dates, recurring rules, etc.): <strong>stored on your device only</strong>.</li>
+    <li>Account information: none.</li>
+</ul>
+
+<h3>2-2. When you sign up / sign in</h3>
+<p>To provide account features (backup/restore, multi-device use, pocket sharing), we process the following:</p>
+<ul>
+    <li><strong>Account information</strong>
+        <ul>
+            <li>Email address, password (stored as a one-way hash), user unique identifier (UUID)</li>
+            <li>Nickname (optional, shown to members of a shared pocket)</li>
+            <li>Authentication metadata such as account creation and last sign-in timestamps</li>
+        </ul>
+    </li>
+    <li><strong>Budget-related data</strong>: income/expense records (amount, memo, date, type, category, wallet, pocket), user-defined categories, wallets and pockets, recurring rules and their last-generated dates.</li>
+    <li><strong>When you use sharing</strong>: shared pocket key, owner and participant UUIDs, permission (read/write), share invitation link tokens and expiration timestamps.</li>
+</ul>
+
+<h2>3. Purpose of Processing</h2>
+<ul>
+    <li>Account authentication and session management</li>
+    <li>Cloud backup of your data and synchronization across your devices</li>
+    <li>Issuing share invitation links and allowing invited participants to view/record data in a shared pocket</li>
+    <li>Maintaining service reliability and handling errors</li>
+</ul>
+
+<h2>4. Sub-processors (Third Parties)</h2>
+<p>The App relies on the following service for authentication and cloud storage:</p>
+<ul>
+    <li><strong>Supabase</strong> (Supabase Inc., USA) — Authentication (Supabase Auth) and database (PostgreSQL) hosting. The account, budget, and sharing data described above are stored here. Access is restricted by Row Level Security (RLS) policies so that only the owner and users the owner has explicitly shared with can access the data.</li>
+</ul>
+<p>We do not sell your personal data or share it with any third party other than the sub-processor above.</p>
+
+<h2>5. International Data Transfer</h2>
+<p>Because we use Supabase, the data described above may be stored and processed on servers in a region operated by Supabase outside your country. Signing up for and using the account features constitutes your consent to such international transfer.</p>
+
+<h2>6. Optional Permissions & On-Device Processing</h2>
 <ul>
     <li><strong>Notifications (optional)</strong>: used for local reminders such as recurring entries.</li>
     <li>The App schedules/displays notifications on device only and <strong>does not use remote push notifications.</strong></li>
     <li><strong>No device push tokens are collected or transmitted.</strong></li>
     <li>You can change or revoke notification permissions in iOS Settings at any time.</li>
 </ul>
-<p>The App uses these permissions on-device only and does not transmit data off the device.</p>
-<h2>3. Third‑Party SDKs</h2>
-<p>If analytics, crash reporting, or other third‑party SDKs are integrated, data collection may change. We will update this policy and the App Store “App Privacy” details accordingly.</p>
-<h2>4. Children’s Privacy</h2>
+
+<h2>7. Data Retention & Deletion</h2>
+<ul>
+    <li>Locally stored data is removed when you uninstall the App.</li>
+    <li>When you delete your account, the account and all budget/sharing data associated with it are removed from Supabase (via cascading deletes).</li>
+    <li>Depending on your OS/iCloud backup settings, app data may be backed up by Apple; the developer cannot access your backups.</li>
+</ul>
+
+<h2>8. Your Rights</h2>
+<p>You can view, modify, and delete your data in the App at any time. To request account deletion or exercise any right to access, correction, deletion, or objection to processing, contact us at the address below.</p>
+
+<h2>9. Children’s Privacy</h2>
 <p>The App is not directed to children under 13 and does not knowingly collect or store children’s personal information.</p>
-<h2>5. Data Security & Retention</h2>
-<ul><li>Data is stored locally and is deleted when the App is uninstalled.</li><li>Depending on your OS/iCloud backup settings, app data may be backed up by Apple; the developer cannot access your backups.</li></ul>
-<h2>6. Contact</h2>
-<p>For privacy inquiries: <a href="mailto:azedaum22@gmail.com">azedaum22@gmail.com</a></p>
-<h2>7. Changes</h2>
+
+<h2>10. Security</h2>
+<ul>
+    <li>All communication with Supabase is encrypted using HTTPS (TLS).</li>
+    <li>Server-side access is restricted by Supabase Auth session tokens and Row Level Security policies.</li>
+    <li>Passwords are stored as one-way hashes by Supabase Auth; the developer cannot see the plaintext.</li>
+</ul>
+
+<h2>11. Contact</h2>
+<p>For privacy or account inquiries (including account deletion requests): <a href="mailto:azedaum22@gmail.com">azedaum22@gmail.com</a></p>
+
+<h2>12. Changes</h2>
 <p>We may update this policy due to legal or feature changes. The latest version will always be available on this page.</p>
-<p>© 2025 Purket</p>
+<p>© 2026 Purket</p>
 </body></html>

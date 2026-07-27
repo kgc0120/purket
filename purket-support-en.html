@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -16,7 +16,7 @@
 <body>
 
 <h1>Purket Support</h1>
-<p class="muted">Updated: 2025-08-31</p>
+<p class="muted">Updated: 2026-07-27</p>
 
 <div class="card">
 <h2>Contact</h2>
@@ -26,20 +26,44 @@
 
 <div class="card">
 <h2>FAQ</h2>
-<details><summary>Where is my data stored?</summary>
-<p>Budget data is stored <strong>on your device</strong>. Deleting the app will remove the data.</p>
+
+<details><summary>Can I use the App without an account?</summary>
+<p>Yes. All core budgeting features work without signing in. In that case, your data is stored on your device only and will be removed if you uninstall the App.</p>
 </details>
+
+<details><summary>What are sign-up and sign-in for?</summary>
+<p>Signing in with an email account enables <strong>cloud backup, restoring your data when switching devices, and sharing a pocket with someone else</strong>. When you are signed in, your budget data is stored securely on our Supabase (PostgreSQL) server.</p>
+</details>
+
+<details><summary>Where is my data stored?</summary>
+<p>Without signing in, data is stored on your device only. When signed in, data is stored on your device and simultaneously synced to a cloud (Supabase, USA) server. Traffic is encrypted with HTTPS, and Row Level Security policies ensure that only you and users you have shared with can access your data.</p>
+</details>
+
+<details><summary>How does pocket sharing work?</summary>
+<p>Signed-in users can share a specific pocket with another user by generating an invitation link. When the recipient opens and accepts the link, they can view and record entries in that pocket. Members of a shared pocket see the owner's nickname.</p>
+</details>
+
+<details><summary>How can I delete my account?</summary>
+<p>Please contact us at the email above. Your account and all budget and sharing data associated with it will be removed from the server.</p>
+</details>
+
 <details><summary>Do you support backup/restore?</summary>
-<p>Data may be included in your iCloud device backup; the developer cannot access your backups. Export/Import features are planned.</p>
+<p>Yes — when signed in, backup and restore are handled automatically per account. Without signing in, data may be included in your iCloud device backup, but the developer cannot access those backups.</p>
+</details>
+
+<details><summary>I can't sign in or sync isn't working.</summary>
+<p>Please check your network connection and make sure the App and OS are up to date. Changes made offline will automatically sync to the server once you are back online.</p>
 </details>
 </div>
 
 <div class="card">
 <h2>Troubleshooting</h2>
 <ol>
-<li>Update to the latest app/OS version</li>
+<li>Update to the latest App/OS version</li>
+<li>Check your network (Wi-Fi/cellular) connection</li>
 <li>Ensure you have enough storage</li>
-<li>Restart the app and your device</li>
+<li>Restart the App and your device</li>
+<li>For account issues, sign out and sign back in</li>
 </ol>
 </div>
 
@@ -50,6 +74,6 @@
 </ul>
 </div>
 
-<p class="muted">© 2025 Purket</p>
+<p class="muted">© 2026 Purket</p>
 </body>
 </html>
